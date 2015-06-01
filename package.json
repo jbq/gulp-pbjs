@@ -1,6 +1,6 @@
 {
   "name": "gulp-pbjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A gulp module that converts .proto files to their .json equivilent.",
   "main": "index.js",
   "scripts": {

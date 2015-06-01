@@ -5,18 +5,18 @@ var extend = require('extend');
 
 const PLUGIN_NAME = 'gulp-pbjs';
 
-var sources = {};
-fs.readdirSync(__dirname+"/node_modules/protobufjs/cli/pbjs/sources").forEach(function(source) {
-    if (/\.js$/.test(source))
-        sources[source.substring(0, source.lastIndexOf("."))] = require(__dirname+"/node_modules/protobufjs/cli/pbjs/sources/"+source);
-});
+var sources = {
+    json: require('protobufjs/cli/pbjs/sources/json'),
+    proto: require('protobufjs/cli/pbjs/sources/proto')
+};
 
-var targets = {};
-fs.readdirSync(__dirname+"/node_modules/protobufjs/cli/pbjs/targets").forEach(function(target) {
-    if (/\.js$/.test(target))
-        targets[target.substring(0, target.lastIndexOf("."))] = require(__dirname+"/node_modules/protobufjs/cli/pbjs/targets/"+target);
-});
-
+var targets = {
+    amd: require('protobufjs/cli/pbjs/targets/amd'),
+    commonjs: require('protobufjs/cli/pbjs/targets/commonjs'),
+    js: require('protobufjs/cli/pbjs/targets/js'),
+    json: require('protobufjs/cli/pbjs/targets/json'),
+    proto: require('protobufjs/cli/pbjs/targets/proto')
+};
 
 function pbjs(o) {
 
