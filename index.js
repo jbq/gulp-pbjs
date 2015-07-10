@@ -40,7 +40,7 @@ function pbjs(o) {
 
             var callOptions = extend({}, options, {path:[file.base]});
 
-            var builder = sources[options.source](file.history[0], callOptions);
+            var builder = sources[options.source]([file.history[0]], callOptions);
             file.contents = new Buffer(targets[options.target](builder, callOptions));
 
             file.path = gutil.replaceExtension(file.path, ".js");

@@ -1,6 +1,6 @@
 {
   "name": "gulp-pbjs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A gulp module that converts .proto files to their .json equivilent.",
   "main": "index.js",
   "scripts": {
@@ -14,9 +14,12 @@
   "author": "Kenneth Heutmaker",
   "license": "ISC",
   "dependencies": {
-    "extend": "^2.0.1",
+    "extend": "^3.0.0",
     "gulp-util": "^3.0.4",
-    "protobufjs": "^4.0.0-b2",
-    "through2": "^0.6.5"
+    "protobufjs": "^4.0.0",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
   }
 }
