@@ -27,7 +27,6 @@ function pbjs(o) {
     }, o);
 
     return through.obj(function(file, enc, cb) {
-        console.log(file.base);
 
         if (file.isNull()) {
             cb(null, file);
@@ -38,7 +37,8 @@ function pbjs(o) {
 
         if(file.isBuffer()) {
 
-            var callOptions = extend({}, options, {path:[file.base]});
+            var callOptions = extend({}, options)
+            callOptions.path.push(file.base)
 
             var builder = sources[options.source]([file.history[0]], callOptions);
             file.contents = new Buffer(targets[options.target](builder, callOptions));
